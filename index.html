@@ -20,7 +20,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
   <style>
-    :root{ --bg:#0F172A; --primary:#38BDF8; --secondary:#A78BFA; --text:#F8FAFC; --muted:#94A3B8; --glass:rgba(255,255,255,0.04); --max-width:1100px; font-family:'Poppins',system-ui,Segoe UI,Roboto,Arial; }
+    :root{ --bg:#0F172A; --surface:#071028; --primary:#38BDF8; --secondary:#A78BFA; --text:#F8FAFC; --muted:#94A3B8; --glass:rgba(255,255,255,0.04); --max-width:1100px; font-family:'Poppins',system-ui,Segoe UI,Roboto,Arial; }
     html,body{height:100%;margin:0;background:radial-gradient(1200px 600px at 10% 10%, rgba(167,139,250,0.06), transparent), linear-gradient(180deg,var(--bg),#071028 120%);color:var(--text);-webkit-font-smoothing:antialiased}
     .container{width:100%;max-width:var(--max-width);padding:32px;margin:0 auto;box-sizing:border-box}
     header{position:sticky;top:12px;padding:10px 0;z-index:40}
@@ -31,6 +31,7 @@
     nav a{color:var(--muted);text-decoration:none;padding:8px 10px;border-radius:8px;font-weight:600}
     nav a.active,nav a:hover{color:var(--text);background:rgba(255,255,255,0.02)}
     .btn{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:8px 12px;border-radius:10px;color:var(--text);cursor:pointer}
+    .hamburger{display:none;background:transparent;border:0;color:var(--text);font-size:20px;padding:8px;border-radius:8px}
 
     .hero{padding:72px 0;display:flex;align-items:center}
     .hero-card{flex:1;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);padding:28px;border-radius:18px;position:relative;overflow:hidden;box-shadow:0 12px 30px rgba(2,6,23,0.6)}
@@ -51,7 +52,22 @@
     .projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
     .project{padding:18px;border-radius:12px;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);box-shadow:0 12px 30px rgba(2,6,23,0.45)}
     footer{opacity:0.8;padding:28px 0;text-align:center;color:var(--muted)}
-    @media(max-width:880px){.profile-grid{grid-template-columns:1fr}.hero{padding:40px 0}}
+    @media(max-width:880px){
+      .profile-grid{grid-template-columns:1fr}
+      .hero{padding:40px 0}
+      .hamburger{display:block}
+      nav ul{display:none}
+      /* animate mobile nav items when overlay opens */
+      nav ul li{opacity:0;transform:translateY(-8px);transition:opacity 260ms ease, transform 260ms ease;transition-delay:var(--delay,0ms)}
+      body.menu-open nav ul li{opacity:1;transform:none}
+      /* mobile menu overlay */
+      body.menu-open::before{content:'';position:fixed;inset:0;background:rgba(2,6,23,0.6);backdrop-filter:blur(4px);z-index:50}
+      body.menu-open nav ul{display:block;position:fixed;top:82px;right:12px;left:12px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:12px;border-radius:12px;box-shadow:0 18px 40px rgba(2,6,23,0.6);z-index:60}
+      body.menu-open nav ul li{display:block;margin:6px 0}
+      .progress{height:14px}
+      .fab-contact{display:block;position:fixed;right:16px;bottom:20px;background:linear-gradient(90deg,var(--primary),var(--secondary));color:#071028;width:52px;height:52px;border-radius:999px;display:grid;place-items:center;box-shadow:0 10px 30px rgba(2,6,23,0.45);z-index:70;transform:translateY(18px);transition:transform 350ms cubic-bezier(.2,.9,.3,1),box-shadow 180ms}
+      .fab-contact.show{transform:translateY(0)}
+    }
     .reveal{opacity:0;transform:translateY(12px);transition:opacity 700ms ease,transform 700ms ease}
     .reveal.in{opacity:1;transform:none}
   </style>
@@ -67,14 +83,17 @@
         </div>
       </div>
 
-      <nav>
-        <ul>
-          <li><a href="#home" class="nav-link active">Home</a></li>
-          <li><a href="#about" class="nav-link">About</a></li>
-          <li><a href="#skills" class="nav-link">Skills</a></li>
-          <li><a href="#projects" class="nav-link">Projects</a></li>
-          <li><a href="#contact" class="nav-link">Contact</a></li>
-        </ul>
+      <nav aria-label="Primary navigation">
+        <button id="nav-toggle" class="nav-toggle hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="primary-nav">☰</button>
+        <div id="primary-nav" class="nav-links">
+          <ul>
+            <li><a href="#home" class="nav-link active">Home</a></li>
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#skills" class="nav-link">Skills</a></li>
+            <li><a href="#projects" class="nav-link">Projects</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+          </ul>
+        </div>
       </nav>
 
       <div class="controls"><button class="btn" id="theme-toggle" aria-label="Toggle theme">🌙</button></div>
@@ -112,7 +131,7 @@
           <ul style="color:var(--muted)">
             <li>Location: Dehradun, India</li>
             <li>Email: <a href="mailto:aman.dwivedi@example.com" style="color:var(--primary)">aman.dwivedi@example.com</a></li>
-            <li>Phone: +91 98765 43210</li>
+            <li>Phone: +91 92445 24363</li>
           </ul>
         </div>
       </div>
@@ -135,7 +154,7 @@
           <h4>Get in touch</h4>
           <p style="color:var(--muted)">Open to internships and collaborations. Reach out by email or send a message below.</p>
           <p style="margin-top:8px"><strong>Email:</strong> <a href="mailto:aman.dwivedi@example.com" style="color:var(--primary)">aman.dwivedi@example.com</a></p>
-          <p><strong>Phone:</strong> <span style="color:var(--muted)">+91 98765 43210</span></p>
+          <p><strong>Phone:</strong> <span style="color:var(--muted)">+91 92445 24363</span></p>
           <div style="display:flex;gap:10px;margin-top:8px"><a href="#" style="color:var(--muted)">GitHub</a><a href="#" style="color:var(--muted)">LinkedIn</a></div>
         </div>
 
@@ -158,6 +177,8 @@
   <footer>
     © <span id="year"></span> • Built with care • JBIT Dehradun
   </footer>
+
+  <button id="fab-contact" class="fab-contact" aria-label="Quick contact" title="Contact">✉️</button>
 
   <script>
     // Mock API data
@@ -226,8 +247,9 @@
     (async ()=>{
       const skills = await (await fetch('/api/skills')).json();
       const grid = el('skills-grid'); grid.innerHTML='';
-      skills.forEach(s=>{
+      skills.forEach((s,i)=>{
         const card = document.createElement('div'); card.className='skill reveal';
+        card.style.setProperty('--delay', (i*70)+'ms');
         card.innerHTML = `<div class="label">${s.name} <span style="float:right;color:var(--muted);font-weight:600">${s.level}%</span></div><div class="progress"><i data-level="${s.level}"></i></div>`;
         grid.appendChild(card);
         io.observe(card);
@@ -239,8 +261,9 @@
     (async ()=>{
       const projects = await (await fetch('/api/projects')).json();
       const grid = el('projects-grid'); grid.innerHTML='';
-      projects.forEach(p=>{
+      projects.forEach((p,i)=>{
         const card = document.createElement('article'); card.className='project reveal';
+        card.style.setProperty('--delay', (i*80)+'ms');
         card.innerHTML = `<h4 style="margin:0">${p.title}</h4><p style="color:var(--muted)">${p.description}</p><div class="tags">${p.tech_stack.map(t=>`<span class='tag'>${t}</span>`).join('')}</div><div style="margin-top:10px"><a href='${p.demo_url}' class='btn' style='padding:6px 10px'>Live</a> <a href='${p.repo_url}' class='btn' style='padding:6px 10px'>Repo</a></div>`;
         grid.appendChild(card);
         io.observe(card);
@@ -254,8 +277,23 @@
     // Attach reveals that exist on load
     document.querySelectorAll('.reveal').forEach(r=>io.observe(r));
 
-    // Nav click behaviour
+    // Mobile nav toggle + staggered menu reveal
+    const navToggle = el('nav-toggle');
+    function closeMenu(){ document.body.classList.remove('menu-open'); if(navToggle) navToggle.setAttribute('aria-expanded','false'); document.querySelectorAll('nav ul li').forEach(li=>li.style.removeProperty('--delay')); }
+    function openMenu(){ document.body.classList.add('menu-open'); if(navToggle) navToggle.setAttribute('aria-expanded','true'); document.querySelectorAll('nav ul li').forEach((li,i)=>li.style.setProperty('--delay', (i*60)+'ms')); }
+    if(navToggle){ navToggle.addEventListener('click',(e)=>{ e.stopPropagation(); document.body.classList.contains('menu-open')? closeMenu() : openMenu(); }); }
+    document.addEventListener('click',(e)=>{ if(document.body.classList.contains('menu-open') && !e.target.closest('.nav')) closeMenu(); });
+    document.querySelectorAll('nav ul a').forEach(a=>a.addEventListener('click', ()=> closeMenu()));
+
+    // Nav click behaviour (active link)
     document.querySelectorAll('.nav-link').forEach(a=>a.addEventListener('click',(e)=>{ document.querySelectorAll('.nav-link').forEach(x=>x.classList.remove('active')); e.currentTarget.classList.add('active'); }));
+
+    // FAB contact button behavior
+    const fab = el('fab-contact');
+    function updateFab(){ if(!fab) return; if(window.scrollY > 160) fab.classList.add('show'); else fab.classList.remove('show'); }
+    window.addEventListener('scroll', ()=>{ updateFab(); });
+    updateFab();
+    if(fab) fab.addEventListener('click', ()=>{ document.getElementById('contact').scrollIntoView({behavior:'smooth', block:'center'}); });
 
     // Accessibility: focus outlines for keyboard users
     (function(){ function handleFirstTab(e){ if(e.key==='Tab'){ document.body.classList.add('user-is-tabbing'); window.removeEventListener('keydown', handleFirstTab); } } window.addEventListener('keydown', handleFirstTab); })();
