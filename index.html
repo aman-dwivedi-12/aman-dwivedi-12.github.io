@@ -3,18 +3,16 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Your Name — Portfolio | Single-File Animated Personal Portfolio</title>
-  <meta name="description" content="Single-file animated personal portfolio template — modern, responsive, and accessible. Education: JBIT Dehradun." />
+  <title>Aman Dwivedi — Portfolio | Single-File Animated Personal Portfolio</title>
+  <meta name="description" content="Aman Dwivedi — single-file animated portfolio; student at JBIT Dehradun." />
   <meta name="theme-color" content="#0F172A" />
 
   <!-- Open Graph / Twitter -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Single-File Animated Personal Portfolio" />
-  <meta property="og:description" content="A modern, high-impact personal portfolio in one HTML file with premium animations and clean responsive design." />
-  <meta property="og:image" content="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='1200' height='630'><defs><linearGradient id='g' x1='0' x2='1'><stop offset='0' stop-color='%2338BDF8'/><stop offset='1' stop-color='%23A78BFA'/></linearGradient></defs><rect width='100%' height='100%' fill='%230F172A'/><text x='50%' y='50%' font-family='Poppins,system-ui,Arial' font-weight='700' font-size='48' fill='white' text-anchor='middle' dominant-baseline='middle'>Single-File Animated Personal Portfolio</text></svg>" />
+  <meta property="og:title" content="Aman Dwivedi — Portfolio" />
+  <meta property="og:description" content="Computer Science student at JBIT Dehradun. Frontend development, C++ games, Java projects and web apps." />
+  <meta property="og:image" content="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='1200' height='630'><rect width='100%' height='100%' fill='%230F172A'/><text x='50%' y='50%' font-family='Poppins,system-ui,Arial' font-weight='700' font-size='48' fill='white' text-anchor='middle' dominant-baseline='middle'>Aman Dwivedi — Portfolio</text></svg>" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Single-File Animated Personal Portfolio" />
-  <meta name="twitter:description" content="A modern, high-impact personal portfolio in one HTML file with premium animations and clean responsive design." />
 
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
@@ -22,120 +20,39 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
   <style>
-    /* Root tokens (dark & luxury) */
-    :root{
-      --bg: #0F172A;
-      --surface: #111827;
-      --primary: #38BDF8;
-      --secondary: #A78BFA;
-      --text: #F8FAFC;
-      --muted: #94A3B8;
-      --success: #22C55E;
-      --glass: rgba(255,255,255,0.04);
-      --radius: 14px;
-      --max-width: 1100px;
-      font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
-    }
-
-    /* Dark mode respect for prefers-color-scheme */
-    @media (prefers-color-scheme: light){
-      :root{ /* keep dark as primary but allow reduced contrast if user prefers light */ }
-    }
-
-    html,body{height:100%;}
-    html{scroll-behavior:smooth}
-    body{
-      margin:0;min-height:100%;background:radial-gradient(1200px 600px at 10% 10%, rgba(167,139,250,0.06), transparent), linear-gradient(180deg,var(--bg), #071028 120%);color:var(--text);-webkit-font-smoothing:antialiased;line-height:1.5;
-      display:flex;flex-direction:column;align-items:center;
-    }
-
-    .container{width:100%;max-width:var(--max-width);padding:32px;box-sizing:border-box}
-
-    /* Header / Nav */
-    header{position:sticky;top:12px;z-index:40;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);}
-    .nav{display:flex;align-items:center;justify-content:space-between;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:12px;padding:10px 14px;box-shadow:0 6px 18px rgba(2,6,23,0.6);}
+    :root{ --bg:#0F172A; --primary:#38BDF8; --secondary:#A78BFA; --text:#F8FAFC; --muted:#94A3B8; --glass:rgba(255,255,255,0.04); --max-width:1100px; font-family:'Poppins',system-ui,Segoe UI,Roboto,Arial; }
+    html,body{height:100%;margin:0;background:radial-gradient(1200px 600px at 10% 10%, rgba(167,139,250,0.06), transparent), linear-gradient(180deg,var(--bg),#071028 120%);color:var(--text);-webkit-font-smoothing:antialiased}
+    .container{width:100%;max-width:var(--max-width);padding:32px;margin:0 auto;box-sizing:border-box}
+    header{position:sticky;top:12px;padding:10px 0;z-index:40}
+    .nav{display:flex;align-items:center;justify-content:space-between;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:12px;padding:10px 14px;box-shadow:0 6px 18px rgba(2,6,23,0.6)}
     .brand{display:flex;gap:12px;align-items:center}
-    .logo{width:44px;height:44px;border-radius:10px;display:inline-grid;place-items:center;background:linear-gradient(135deg,var(--primary),var(--secondary));box-shadow:0 6px 18px rgba(58,47,99,0.25);}
-    .logo svg{width:28px;height:28px;}
-    .brand h1{font-size:16px;margin:0;letter-spacing:0.2px}
-    .brand p{margin:0;font-size:12px;color:var(--muted)}
-
+    .logo{width:44px;height:44px;border-radius:10px;display:inline-grid;place-items:center;background:linear-gradient(135deg,var(--primary),var(--secondary));}
     nav ul{display:flex;gap:12px;list-style:none;margin:0;padding:0}
     nav a{color:var(--muted);text-decoration:none;padding:8px 10px;border-radius:8px;font-weight:600}
-    nav a.active,nav a:hover{color:var(--text);background:linear-gradient(90deg,rgba(255,255,255,0.02), rgba(255,255,255,0.01));}
+    nav a.active,nav a:hover{color:var(--text);background:rgba(255,255,255,0.02)}
+    .btn{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:8px 12px;border-radius:10px;color:var(--text);cursor:pointer}
 
-    .controls{display:flex;gap:8px;align-items:center}
-    .btn{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:8px 12px;border-radius:10px;color:var(--text);cursor:pointer;font-weight:600}
-
-    /* Hero */
-    .hero{display:grid;grid-template-columns:1fr;gap:28px;align-items:center;padding:72px 0}
-    .hero-inner{display:flex;gap:28px;align-items:center}
-    .hero-card{background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);padding:28px;border-radius:18px;box-shadow:0 12px 30px rgba(2,6,23,0.6);position:relative;overflow:hidden}
-
-    .headline{font-size:clamp(28px,5vw,48px);margin:0 0 12px 0;line-height:1.02;font-weight:800;letter-spacing:-0.02em;background:linear-gradient(90deg,var(--primary),var(--secondary));-webkit-background-clip:text;background-clip:text;color:transparent}
-    .role{color:var(--primary);font-weight:700;margin-bottom:10px}
+    .hero{padding:72px 0;display:flex;align-items:center}
+    .hero-card{flex:1;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);padding:28px;border-radius:18px;position:relative;overflow:hidden;box-shadow:0 12px 30px rgba(2,6,23,0.6)}
+    .headline{font-size:clamp(28px,5vw,44px);margin:0 0 12px;line-height:1.02;font-weight:800;background:linear-gradient(90deg,var(--primary),var(--secondary));-webkit-background-clip:text;background-clip:text;color:transparent}
+    .role{color:var(--primary);font-weight:700}
     .bio{color:var(--muted);max-width:60ch}
-    .cta{display:flex;gap:12px;margin-top:18px}
-
-    /* Floating accents */
     .float-shape{position:absolute;border-radius:999px;filter:blur(40px);opacity:0.6;pointer-events:none}
-    .float-a{width:220px;height:220px;right:-40px;top:-60px;background:linear-gradient(45deg,var(--secondary),var(--primary));transform:translateZ(0);animation:float 8s ease-in-out infinite}
-    .float-b{width:140px;height:140px;left:-40px;bottom:-40px;background:linear-gradient(45deg,var(--primary),#6EE7B7);animation:float 10s ease-in-out infinite reverse}
+    .float-a{width:220px;height:220px;right:-40px;top:-60px;background:linear-gradient(45deg,var(--secondary),var(--primary));animation:float 9s ease-in-out infinite}
+    @keyframes float{0%{transform:translateY(0)}50%{transform:translateY(-18px)}100%{transform:translateY(0)}}
 
-    @keyframes float{0%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-18px) rotate(8deg)}100%{transform:translateY(0) rotate(0deg)}}
-
-    /* Sections */
     section{padding:64px 0}
-    h2.section-title{font-size:20px;margin:0 0 18px 0}
-
-    /* About / Profile */
     .profile-grid{display:grid;grid-template-columns:280px 1fr;gap:20px}
-    .profile-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);padding:20px;border-radius:16px}
-    .avatar{width:100%;height:260px;border-radius:12px;background:linear-gradient(135deg,var(--primary),var(--secondary));display:grid;place-items:center;color:var(--bg);font-weight:800;font-size:42px}
-    .timeline{background:var(--glass);padding:16px;border-radius:12px}
-
-    /* Stats */
-    .stats{display:flex;gap:14px;margin-top:14px}
-    .stat{background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);padding:12px;border-radius:12px;text-align:center;flex:1}
-    .stat b{display:block;font-size:18px}
-
-    /* Skills */
+    .avatar{height:260px;border-radius:12px;background:linear-gradient(135deg,var(--primary),var(--secondary));display:grid;place-items:center;color:#071028;font-weight:800;font-size:42px}
     .skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px}
     .skill{background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);padding:12px;border-radius:12px}
-    .skill .label{font-weight:700;margin-bottom:6px}
     .progress{height:10px;background:rgba(255,255,255,0.04);border-radius:10px;overflow:hidden}
-    .progress > i{display:block;height:100%;background:linear-gradient(90deg,var(--primary),var(--secondary));width:0%;transition:width 900ms cubic-bezier(.2,.9,.3,1)}
-
-    /* Projects */
+    .progress>i{display:block;height:100%;background:linear-gradient(90deg,var(--primary),var(--secondary));width:0%;transition:width 900ms cubic-bezier(.2,.9,.3,1)}
     .projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
-    .project{padding:18px;border-radius:12px;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);box-shadow:0 12px 30px rgba(2,6,23,0.45);transition:transform 220ms ease, box-shadow 220ms ease}
-    .project:hover{transform:translateY(-6px);box-shadow:0 22px 48px rgba(2,6,23,0.6)}
-    .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
-    .tag{font-size:12px;padding:6px 8px;border-radius:999px;background:rgba(255,255,255,0.03);color:var(--muted)}
-
-    /* Contact */
-    .contact-grid{display:grid;grid-template-columns:1fr 420px;gap:20px}
-    .contact-card{padding:20px;border-radius:12px;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent)}
-    form label{display:block;font-weight:700;margin-bottom:6px}
-    form input, form textarea{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:var(--text);resize:vertical}
-
-    footer{opacity:0.7;padding:28px 0;text-align:center;color:var(--muted)}
-
-    /* Responsive */
-    @media (max-width:880px){
-      .profile-grid{grid-template-columns:1fr}
-      .hero-inner{flex-direction:column}
-      .contact-grid{grid-template-columns:1fr}
-      header{top:8px}
-    }
-
-    /* Reduced motion */
-    @media (prefers-reduced-motion: reduce){
-      *{animation:none!important;transition:none!important}
-    }
-
-    /* Reveal helper */
-    .reveal{opacity:0;transform:translateY(14px);transition:opacity 700ms ease, transform 700ms ease}
+    .project{padding:18px;border-radius:12px;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);box-shadow:0 12px 30px rgba(2,6,23,0.45)}
+    footer{opacity:0.8;padding:28px 0;text-align:center;color:var(--muted)}
+    @media(max-width:880px){.profile-grid{grid-template-columns:1fr}.hero{padding:40px 0}}
+    .reveal{opacity:0;transform:translateY(12px);transition:opacity 700ms ease,transform 700ms ease}
     .reveal.in{opacity:1;transform:none}
   </style>
 </head>
@@ -143,12 +60,10 @@
   <header class="container">
     <div class="nav" role="navigation" aria-label="Primary">
       <div class="brand">
-        <div class="logo" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="3" width="18" height="18" rx="4" fill="white" fill-opacity="0.14"/><path d="M7 12h10M7 8h10M7 16h10" stroke="white" stroke-opacity="0.9" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
+        <div class="logo" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="3" width="18" height="18" rx="4" fill="white" fill-opacity="0.08"/></svg></div>
         <div>
-          <h1 style="font-size:14px;margin:0">Your Name</h1>
-          <p style="font-size:12px;margin:0;color:var(--muted)">Frontend Developer • JBIT Dehradun</p>
+          <h1 style="font-size:14px;margin:0">Aman Dwivedi</h1>
+          <p style="font-size:12px;margin:0;color:var(--muted)">Computer Science Student • JBIT Dehradun</p>
         </div>
       </div>
 
@@ -162,26 +77,18 @@
         </ul>
       </nav>
 
-      <div class="controls">
-        <button class="btn" id="theme-toggle" aria-label="Toggle theme">🌙</button>
-      </div>
+      <div class="controls"><button class="btn" id="theme-toggle" aria-label="Toggle theme">🌙</button></div>
     </div>
   </header>
 
   <main class="container">
     <section id="home" class="hero">
-      <div class="hero-inner reveal in">
-        <div class="hero-card" style="flex:1">
-          <div class="float-shape float-a" aria-hidden="true"></div>
-          <div class="float-shape float-b" aria-hidden="true"></div>
-          <h2 class="headline">Hi, I'm <span id="name-animated">Your Name</span></h2>
-          <div class="role">I'm a <span id="role-typing" aria-live="polite">Frontend Developer</span></div>
-          <p class="bio">I build modern, responsive interfaces and delightful micro-interactions. Currently studying at JBIT Dehradun with a focus on frontend web development and UI design.</p>
-          <div class="cta">
-            <a class="btn" href="#contact">Contact Me</a>
-            <a class="btn" href="#projects">View Projects</a>
-          </div>
-        </div>
+      <div class="hero-card reveal in">
+        <div class="float-shape float-a" aria-hidden="true"></div>
+        <h2 class="headline">Hi, I'm <span id="name-animated">Aman Dwivedi</span></h2>
+        <div class="role">I'm a <span id="role-typing" aria-live="polite">Computer Science Student & Frontend Developer</span></div>
+        <p class="bio">I build modern interfaces, small C++ games, Java apps and polished web experiences. Studying at JBIT Dehradun — I like clean UI, animations, and solving problems.</p>
+        <div style="margin-top:16px;display:flex;gap:10px"><a class="btn" href="#projects">See Projects</a><a class="btn" href="#contact">Contact</a></div>
       </div>
     </section>
 
@@ -189,7 +96,7 @@
       <h3 class="section-title">About & Education</h3>
       <div class="profile-grid">
         <div class="profile-card">
-          <div class="avatar">YP</div>
+          <div class="avatar">AD</div>
           <div style="margin-top:12px">
             <strong>Study</strong>
             <div class="timeline" style="margin-top:10px">
@@ -197,19 +104,14 @@
               <div style="color:var(--muted);font-size:13px">B.Tech in Computer Science — Pursuing (2022 - 2026)</div>
             </div>
           </div>
-          <div class="stats" style="margin-top:12px">
-            <div class="stat"><b>6</b><span style="color:var(--muted)">Projects</span></div>
-            <div class="stat"><b>3.5</b><span style="color:var(--muted)">Years Study</span></div>
-            <div class="stat"><b>12</b><span style="color:var(--muted)">Skills</span></div>
-          </div>
         </div>
 
         <div>
-          <p class="bio">Hello — I'm a student and frontend developer passionate about building accessible, animated user interfaces. I enjoy turning ideas into polished web experiences with delightful motion and crisp typography.</p>
+          <p class="bio">I enjoy building UIs that feel alive: accessible, fast, and delightful. I work across web and native apps — from C++ prototypes to responsive JavaScript frontends.</p>
           <h4 style="margin-top:18px">Quick Facts</h4>
           <ul style="color:var(--muted)">
             <li>Location: Dehradun, India</li>
-            <li>Email: <a href="mailto:name@example.com" style="color:var(--primary)">name@example.com</a></li>
+            <li>Email: <a href="mailto:aman.dwivedi@example.com" style="color:var(--primary)">aman.dwivedi@example.com</a></li>
             <li>Phone: +91 98765 43210</li>
           </ul>
         </div>
@@ -218,34 +120,23 @@
 
     <section id="skills" class="reveal">
       <h3 class="section-title">Skills & Strengths</h3>
-      <div class="skills-grid" id="skills-grid">
-        <!-- Skills rendered by JS -->
-      </div>
+      <div class="skills-grid" id="skills-grid"></div>
     </section>
 
     <section id="projects" class="reveal">
       <h3 class="section-title">Projects</h3>
-      <div class="projects-grid" id="projects-grid">
-        <!-- Projects rendered by JS -->
-      </div>
+      <div class="projects-grid" id="projects-grid"></div>
     </section>
 
     <section id="contact" class="reveal">
       <h3 class="section-title">Contact</h3>
-      <div class="contact-grid">
+      <div style="display:grid;grid-template-columns:1fr 420px;gap:20px">
         <div class="contact-card">
           <h4>Get in touch</h4>
-          <p style="color:var(--muted)">I'm open to opportunities and collaborations — feel free to reach out by email or phone, or send a quick message below.</p>
-          <div style="margin-top:14px">
-            <p><strong>Email:</strong> <a href="mailto:name@example.com" style="color:var(--primary)">name@example.com</a></p>
-            <p><strong>Phone:</strong> <span style="color:var(--muted)">+91 98765 43210</span></p>
-            <p style="margin-top:8px"><strong>Social</strong></p>
-            <div style="display:flex;gap:10px">
-              <a href="#" style="color:var(--muted)">GitHub</a>
-              <a href="#" style="color:var(--muted)">LinkedIn</a>
-              <a href="#" style="color:var(--muted)">Twitter</a>
-            </div>
-          </div>
+          <p style="color:var(--muted)">Open to internships and collaborations. Reach out by email or send a message below.</p>
+          <p style="margin-top:8px"><strong>Email:</strong> <a href="mailto:aman.dwivedi@example.com" style="color:var(--primary)">aman.dwivedi@example.com</a></p>
+          <p><strong>Phone:</strong> <span style="color:var(--muted)">+91 98765 43210</span></p>
+          <div style="display:flex;gap:10px;margin-top:8px"><a href="#" style="color:var(--muted)">GitHub</a><a href="#" style="color:var(--muted)">LinkedIn</a></div>
         </div>
 
         <div class="contact-card">
@@ -255,11 +146,8 @@
             <label for="email">Email</label>
             <input id="email" name="email" type="email" required placeholder="you@example.com" />
             <label for="message">Message</label>
-            <textarea id="message" name="message" rows="6" required placeholder="Say hi — or share a brief project idea"></textarea>
-            <div style="display:flex;gap:8px;margin-top:12px">
-              <button class="btn" type="submit">Send Message</button>
-              <button class="btn" type="button" id="mailto-btn">Open Email</button>
-            </div>
+            <textarea id="message" name="message" rows="6" required placeholder="Short message"></textarea>
+            <div style="display:flex;gap:8px;margin-top:12px"><button class="btn" type="submit">Send</button><button class="btn" type="button" id="mailto-btn">Open Email</button></div>
             <div id="form-status" style="margin-top:12px;color:var(--muted)"></div>
           </form>
         </div>
@@ -268,28 +156,30 @@
   </main>
 
   <footer>
-    © <span id="year"></span> Your Name — Built with care • JBIT Dehradun
+    © <span id="year"></span> • Built with care • JBIT Dehradun
   </footer>
 
   <script>
-    // Mock API responses by intercepting fetch for /api/*
+    // Mock API data
     (function(){
       const mock = {
-        '/api/profile': ()=>({ id:'p1', name:'Your Name', headline:'Frontend Developer and UI Enthusiast', bio:'Student at JBIT Dehradun focusing on frontend development', email:'name@example.com', phone:'+91 98765 43210', location:'Dehradun, India', createdAt:new Date().toISOString(), updatedAt:new Date().toISOString() }),
-        '/api/education': ()=>([ {id:'e1', profile_id:'p1', institution:'JBIT Dehradun', degree:'B.Tech in Computer Science', status:'Pursuing', start_year:2022, end_year:2026, description:'Core focus on web technologies', createdAt:new Date().toISOString(), updatedAt:new Date().toISOString()} ]),
-        '/api/skills': ()=>([
-          {id:'s1', profile_id:'p1', name:'HTML', level:92, category:'Frontend'},
-          {id:'s2', profile_id:'p1', name:'CSS', level:88, category:'Frontend'},
-          {id:'s3', profile_id:'p1', name:'JavaScript', level:86, category:'Frontend'},
-          {id:'s4', profile_id:'p1', name:'React', level:72, category:'Frontend'},
-          {id:'s5', profile_id:'p1', name:'Git', level:80, category:'Tools'},
-          {id:'s6', profile_id:'p1', name:'Figma', level:68, category:'Design'}
-        ]),
-        '/api/projects': ()=>([
-          {id:'pr1', profile_id:'p1', title:'Interactive Dashboard', description:'A responsive dashboard with charts and filters.', tech_stack:['HTML','CSS','JavaScript'], demo_url:'#', repo_url:'#', featured:true, createdAt:new Date().toISOString(), updatedAt:new Date().toISOString()},
-          {id:'pr2', profile_id:'p1', title:'Animated Portfolio', description:'Single-file portfolio with premium animations.', tech_stack:['HTML','CSS','Vanilla JS'], demo_url:'#', repo_url:'#', featured:true, createdAt:new Date().toISOString(), updatedAt:new Date().toISOString()},
-          {id:'pr3', profile_id:'p1', title:'Task Tracker', description:'A small PWA-style task manager.', tech_stack:['JS','IndexedDB'], demo_url:'#', repo_url:'#', featured:false, createdAt:new Date().toISOString(), updatedAt:new Date().toISOString()}
-        ]),
+        '/api/skills': ()=>[
+          {id:'s1', name:'HTML', level:92},
+          {id:'s2', name:'CSS', level:88},
+          {id:'s3', name:'JavaScript', level:86},
+          {id:'s4', name:'C++', level:84},
+          {id:'s5', name:'Java', level:80},
+          {id:'s6', name:'Git', level:82},
+          {id:'s7', name:'SQL', level:70},
+          {id:'s8', name:'Algorithms', level:75}
+        ],
+        '/api/projects': ()=>[
+          {id:'pr1', title:'C++ Retro Game', description:'2D platformer built with C++ and SFML. Player movement, enemies, scoring.', tech_stack:['C++','SFML'], demo_url:'#', repo_url:'#', featured:true},
+          {id:'pr2', title:'Java Student Portal', description:'CLI-based student portal using Java and SQLite for local data management.', tech_stack:['Java','SQLite'], demo_url:'#', repo_url:'#', featured:true},
+          {id:'pr3', title:'Interactive Dashboard', description:'Responsive dashboard with charts and filters built in vanilla JS.', tech_stack:['HTML','CSS','JavaScript'], demo_url:'#', repo_url:'#'},
+          {id:'pr4', title:'Animated Portfolio', description:'Single-file animated portfolio template showcasing motion and accessibility.', tech_stack:['HTML','CSS','Vanilla JS'], demo_url:'#', repo_url:'#'},
+          {id:'pr5', title:'Task Tracker PWA', description:'Offline-capable task manager using IndexedDB and Service Worker.', tech_stack:['JS','IndexedDB'], demo_url:'#', repo_url:'#'}
+        ],
         '/api/contact': (body)=>({status:'ok', received:body})
       };
 
@@ -297,536 +187,78 @@
       window.fetch = function(input, init){
         try{
           const url = (typeof input === 'string')? input : input.url;
-          const path = new URL(url, location.origin).pathname;
+          let path = url;
+          try{ path = new URL(url, location.origin).pathname }catch(e){}
           if(path.startsWith('/api/')){
             const fn = mock[path];
             if(!fn) return Promise.resolve(new Response(JSON.stringify({error:'Not found'}), {status:404, headers:{'Content-Type':'application/json'}}));
             if(init && init.method && init.method.toUpperCase()==='POST'){
               const bodyText = init.body || '';
-              let data;
-              try{ data = JSON.parse(bodyText);}catch(e){data = bodyText}
+              let data; try{ data = JSON.parse(bodyText) }catch(e){ data = bodyText }
               return Promise.resolve(new Response(JSON.stringify(fn(data)), {status:200, headers:{'Content-Type':'application/json'}}));
             }
             return Promise.resolve(new Response(JSON.stringify(fn()), {status:200, headers:{'Content-Type':'application/json'}}));
           }
-        }catch(e){/* fallthrough */}
+        }catch(e){}
         return originalFetch(input, init);
       };
     })();
 
     // Utilities
-    function el(id){return document.getElementById(id)}
+    const el = id => document.getElementById(id);
     document.getElementById('year').textContent = new Date().getFullYear();
 
     // Theme toggle
     const themeBtn = el('theme-toggle');
     const stored = localStorage.getItem('theme');
-    function applyTheme(t){
-      document.documentElement.setAttribute('data-theme', t);
-      if(t==='dark'){
-        document.body.style.background = 'radial-gradient(1200px 600px at 10% 10%, rgba(167,139,250,0.06), transparent), linear-gradient(180deg,#0F172A, #071028 120%)';
-        themeBtn.textContent = '🌙';
-      } else {
-        document.body.style.background = 'linear-gradient(180deg,#F8FAFC,#E6EEF8)';
-        themeBtn.textContent = '☀️';
-      }
-    }
+    function applyTheme(t){ document.documentElement.setAttribute('data-theme', t); themeBtn.textContent = t==='dark' ? '🌙' : '☀️'; document.body.style.background = t==='dark' ? 'radial-gradient(1200px 600px at 10% 10%, rgba(167,139,250,0.06), transparent), linear-gradient(180deg,#0F172A,#071028 120%)' : 'linear-gradient(180deg,#F8FAFC,#E6EEF8)'; }
     if(stored) applyTheme(stored); else applyTheme('dark');
     themeBtn.addEventListener('click', ()=>{ const next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark'; localStorage.setItem('theme', next); applyTheme(next); });
 
     // Typing animation
-    (function(){
-      const elRole = el('role-typing');
-      const roles = ['Frontend Developer','UI Enthusiast','Student at JBIT Dehradun'];
-      let idx=0, i=0, forward=true;
-      const speed = navigator.userAgent.indexOf('MSIE')===-1? 70:120;
-      function tick(){
-        if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) { elRole.textContent = roles[0]; return; }
-        const word = roles[idx];
-        if(forward){ i++; elRole.textContent = word.slice(0,i); if(i===word.length){ forward=false; setTimeout(tick,900); return; } }
-        else { i--; elRole.textContent = word.slice(0,i); if(i===0){ forward=true; idx=(idx+1)%roles.length; } }
-        setTimeout(tick, speed);
-      }
-      tick();
-    })();
+    (function(){ const elRole = el('role-typing'); const roles = ['Frontend Developer','UI Enthusiast','Student at JBIT Dehradun']; let idx=0,i=0,fw=true; const speed=70; function tick(){ if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){ elRole.textContent = roles[0]; return; } const w=roles[idx]; if(fw){ i++; elRole.textContent = w.slice(0,i); if(i===w.length){ fw=false; setTimeout(tick,900); return; } } else { i--; elRole.textContent = w.slice(0,i); if(i===0){ fw=true; idx=(idx+1)%roles.length; } } setTimeout(tick,speed);} tick(); })();
+
+    // Observers
+    const io = new IntersectionObserver((entries)=>{ entries.forEach(entry=>{ if(entry.isIntersecting){ entry.target.classList.add('in'); const id = entry.target.id; if(id){ document.querySelectorAll('.nav-link').forEach(a=>a.classList.toggle('active', a.getAttribute('href')===('#'+id))); } } }); }, {threshold:0.12});
+    const skillObserver = new IntersectionObserver((entries)=>{ entries.forEach(en=>{ if(en.isIntersecting){ en.target.querySelectorAll('.progress>i').forEach(i=>i.style.width = i.dataset.level + '%'); } }); }, {threshold:0.2});
 
     // Render skills
-    (async function(){
+    (async ()=>{
       const skills = await (await fetch('/api/skills')).json();
-      const container = el('skills-grid');
-      container.innerHTML = '';
+      const grid = el('skills-grid'); grid.innerHTML='';
       skills.forEach(s=>{
-        const div=document.createElement('div');div.className='skill reveal';
-        div.innerHTML = `<div class="label">${s.name} <span style="float:right;color:var(--muted);font-weight:600">${s.level}%</span></div><div class="progress"><i data-level="${s.level}"></i></div>`;
-        container.appendChild(div);
+        const card = document.createElement('div'); card.className='skill reveal';
+        card.innerHTML = `<div class="label">${s.name} <span style="float:right;color:var(--muted);font-weight:600">${s.level}%</span></div><div class="progress"><i data-level="${s.level}"></i></div>`;
+        grid.appendChild(card);
+        io.observe(card);
+        skillObserver.observe(card);
       });
     })();
 
     // Render projects
-    (async function(){
+    (async ()=>{
       const projects = await (await fetch('/api/projects')).json();
-      const grid = el('projects-grid');
-      grid.innerHTML = '';
+      const grid = el('projects-grid'); grid.innerHTML='';
       projects.forEach(p=>{
-        const d=document.createElement('article');d.className='project reveal';
-        d.innerHTML = `<h4 style="margin:0">${p.title}</h4><p style="color:var(--muted)">${p.description}</p><div class="tags">${p.tech_stack.map(t=>`<span class='tag'>${t}</span>`).join('')}</div><div style="margin-top:10px"><a href='${p.demo_url}' class='btn' style='padding:6px 10px'>Live</a> <a href='${p.repo_url}' class='btn' style='padding:6px 10px'>Repo</a></div>`;
-        grid.appendChild(d);
+        const card = document.createElement('article'); card.className='project reveal';
+        card.innerHTML = `<h4 style="margin:0">${p.title}</h4><p style="color:var(--muted)">${p.description}</p><div class="tags">${p.tech_stack.map(t=>`<span class='tag'>${t}</span>`).join('')}</div><div style="margin-top:10px"><a href='${p.demo_url}' class='btn' style='padding:6px 10px'>Live</a> <a href='${p.repo_url}' class='btn' style='padding:6px 10px'>Repo</a></div>`;
+        grid.appendChild(card);
+        io.observe(card);
       });
     })();
 
-    // Contact form handling
-    document.getElementById('contact-form').addEventListener('submit', async function(e){
-      e.preventDefault(); const status = el('form-status'); status.textContent='Sending...';
-      const body = { name: el('name').value, email: el('email').value, message: el('message').value, sentAt:new Date().toISOString() };
-      try{
-        const res = await fetch('/api/contact', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(body) });
-        const json = await res.json(); status.textContent = 'Message sent — thank you!';
-        setTimeout(()=> status.textContent = '', 4000);
-        this.reset();
-      }catch(err){ status.textContent='Unable to send. Try email: name@example.com'; }
-    });
-    document.getElementById('mailto-btn').addEventListener('click', ()=>{
-      const to = 'name@example.com'; const subj='Hello from portfolio'; const body='Hi — I saw your portfolio.'; location.href = `mailto:${to}?subject=${encodeURIComponent(subj)}&body=${encodeURIComponent(body)}`;
-    });
+    // Contact form
+    el('contact-form').addEventListener('submit', async function(e){ e.preventDefault(); const status = el('form-status'); status.textContent='Sending...'; const body = { name: el('name').value, email: el('email').value, message: el('message').value, sentAt:new Date().toISOString() }; try{ await fetch('/api/contact', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(body)}); status.textContent='Message sent — thank you!'; this.reset(); setTimeout(()=>status.textContent='',4000);}catch(err){ status.textContent='Unable to send — try email: aman.dwivedi@example.com'; } });
+    el('mailto-btn').addEventListener('click', ()=>{ location.href = `mailto:aman.dwivedi@example.com?subject=${encodeURIComponent('Hello Aman')}` });
 
-    // Scroll reveal & active nav
-    const io = new IntersectionObserver((entries)=>{
-      entries.forEach(entry=>{
-        if(entry.isIntersecting){ entry.target.classList.add('in'); const id = entry.target.id; if(id){ document.querySelectorAll('.nav-link').forEach(a=>a.classList.toggle('active', a.getAttribute('href')===('#'+id))); }
-        }
-      });
-    }, {threshold:0.12});
-    document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+    // Attach reveals that exist on load
+    document.querySelectorAll('.reveal').forEach(r=>io.observe(r));
 
-    // Progress animation for skills on reveal: observe progress bars
-    const skillObserver = new IntersectionObserver((entries)=>{ entries.forEach(en=>{ if(en.isIntersecting){ en.target.querySelectorAll('.progress > i').forEach(i=>{ i.style.width = i.dataset.level + '%'; }); } }); }, {threshold:0.2});
-    document.querySelectorAll('#skills-grid .skill').forEach(s=>skillObserver.observe(s));
-
-    // Active nav links click behaviour
-    document.querySelectorAll('.nav-link').forEach(a=>a.addEventListener('click', (e)=>{ document.querySelectorAll('.nav-link').forEach(n=>n.classList.remove('active')); e.currentTarget.classList.add('active'); }));
-
-    // Ensure sections are observed for nav activation
-    document.querySelectorAll('main > section').forEach(s=>{ s.id && io.observe(s); });
+    // Nav click behaviour
+    document.querySelectorAll('.nav-link').forEach(a=>a.addEventListener('click',(e)=>{ document.querySelectorAll('.nav-link').forEach(x=>x.classList.remove('active')); e.currentTarget.classList.add('active'); }));
 
     // Accessibility: focus outlines for keyboard users
-    (function(){
-      function handleFirstTab(e){ if(e.key==='Tab'){ document.body.classList.add('user-is-tabbing'); window.removeEventListener('keydown', handleFirstTab); }}
-      window.addEventListener('keydown', handleFirstTab);
-    })();
-
-  </script>
-</body>
-</html>
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Your Name — Portfolio | Single-File Animated Personal Portfolio</title>
-  <meta name="description" content="Single-file animated personal portfolio template — modern, responsive, and accessible. Education: JBIT Dehradun." />
-  <meta name="theme-color" content="#0F172A" />
-
-  <!-- Open Graph / Twitter -->
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Single-File Animated Personal Portfolio" />
-  <meta property="og:description" content="A modern, high-impact personal portfolio in one HTML file with premium animations and clean responsive design." />
-  <meta property="og:image" content="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='1200' height='630'><defs><linearGradient id='g' x1='0' x2='1'><stop offset='0' stop-color='%2338BDF8'/><stop offset='1' stop-color='%23A78BFA'/></linearGradient></defs><rect width='100%' height='100%' fill='%230F172A'/><text x='50%' y='50%' font-family='Poppins,system-ui,Arial' font-weight='700' font-size='48' fill='white' text-anchor='middle' dominant-baseline='middle'>Single-File Animated Personal Portfolio</text></svg>" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Single-File Animated Personal Portfolio" />
-  <meta name="twitter:description" content="A modern, high-impact personal portfolio in one HTML file with premium animations and clean responsive design." />
-
-  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-
-  <style>
-    /* Root tokens (dark & luxury) */
-    :root{
-      --bg: #0F172A;
-      --surface: #111827;
-      --primary: #38BDF8;
-      --secondary: #A78BFA;
-      --text: #F8FAFC;
-      --muted: #94A3B8;
-      --success: #22C55E;
-      --glass: rgba(255,255,255,0.04);
-      --radius: 14px;
-      --max-width: 1100px;
-      font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
-    }
-
-    html,body{height:100%;}
-    html{scroll-behavior:smooth}
-    body{
-      margin:0;min-height:100%;background:radial-gradient(1200px 600px at 10% 10%, rgba(167,139,250,0.06), transparent), linear-gradient(180deg,var(--bg), #071028 120%);color:var(--text);-webkit-font-smoothing:antialiased;line-height:1.5;
-      display:flex;flex-direction:column;align-items:center;
-    }
-
-    .container{width:100%;max-width:var(--max-width);padding:32px;box-sizing:border-box}
-
-    /* Header / Nav */
-    header{position:sticky;top:12px;z-index:40;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);}
-    .nav{display:flex;align-items:center;justify-content:space-between;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:12px;padding:10px 14px;box-shadow:0 6px 18px rgba(2,6,23,0.6);}
-    .brand{display:flex;gap:12px;align-items:center}
-    .logo{width:44px;height:44px;border-radius:10px;display:inline-grid;place-items:center;background:linear-gradient(135deg,var(--primary),var(--secondary));box-shadow:0 6px 18px rgba(58,47,99,0.25);}
-    .logo svg{width:28px;height:28px;}
-    .brand h1{font-size:16px;margin:0;letter-spacing:0.2px}
-    .brand p{margin:0;font-size:12px;color:var(--muted)}
-
-    nav ul{display:flex;gap:12px;list-style:none;margin:0;padding:0}
-    nav a{color:var(--muted);text-decoration:none;padding:8px 10px;border-radius:8px;font-weight:600}
-    nav a.active,nav a:hover{color:var(--text);background:linear-gradient(90deg,rgba(255,255,255,0.02), rgba(255,255,255,0.01));}
-
-    .controls{display:flex;gap:8px;align-items:center}
-    .btn{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:8px 12px;border-radius:10px;color:var(--text);cursor:pointer;font-weight:600}
-
-    /* Hero */
-    .hero{display:grid;grid-template-columns:1fr;gap:28px;align-items:center;padding:72px 0}
-    .hero-inner{display:flex;gap:28px;align-items:center}
-    .hero-card{background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);padding:28px;border-radius:18px;box-shadow:0 12px 30px rgba(2,6,23,0.6);position:relative;overflow:hidden}
-
-    .headline{font-size:clamp(28px,5vw,48px);margin:0 0 12px 0;line-height:1.02;font-weight:800;letter-spacing:-0.02em;background:linear-gradient(90deg,var(--primary),var(--secondary));-webkit-background-clip:text;background-clip:text;color:transparent}
-    .role{color:var(--primary);font-weight:700;margin-bottom:10px}
-    .bio{color:var(--muted);max-width:60ch}
-    .cta{display:flex;gap:12px;margin-top:18px}
-
-    /* Floating accents */
-    .float-shape{position:absolute;border-radius:999px;filter:blur(40px);opacity:0.6;pointer-events:none}
-    .float-a{width:220px;height:220px;right:-40px;top:-60px;background:linear-gradient(45deg,var(--secondary),var(--primary));transform:translateZ(0);animation:float 8s ease-in-out infinite}
-    .float-b{width:140px;height:140px;left:-40px;bottom:-40px;background:linear-gradient(45deg,var(--primary),#6EE7B7);animation:float 10s ease-in-out infinite reverse}
-
-    @keyframes float{0%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-18px) rotate(8deg)}100%{transform:translateY(0) rotate(0deg)}}
-
-    /* Sections */
-    section{padding:64px 0}
-    h2.section-title{font-size:20px;margin:0 0 18px 0}
-
-    /* About / Profile */
-    .profile-grid{display:grid;grid-template-columns:280px 1fr;gap:20px}
-    .profile-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);padding:20px;border-radius:16px}
-    .avatar{width:100%;height:260px;border-radius:12px;background:linear-gradient(135deg,var(--primary),var(--secondary));display:grid;place-items:center;color:var(--bg);font-weight:800;font-size:42px}
-    .timeline{background:var(--glass);padding:16px;border-radius:12px}
-
-    /* Stats */
-    .stats{display:flex;gap:14px;margin-top:14px}
-    .stat{background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);padding:12px;border-radius:12px;text-align:center;flex:1}
-    .stat b{display:block;font-size:18px}
-
-    /* Skills */
-    .skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px}
-    .skill{background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);padding:12px;border-radius:12px}
-    .skill .label{font-weight:700;margin-bottom:6px}
-    .progress{height:10px;background:rgba(255,255,255,0.04);border-radius:10px;overflow:hidden}
-    .progress > i{display:block;height:100%;background:linear-gradient(90deg,var(--primary),var(--secondary));width:0%;transition:width 900ms cubic-bezier(.2,.9,.3,1)}
-
-    /* Projects */
-    .projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
-    .project{padding:18px;border-radius:12px;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);box-shadow:0 12px 30px rgba(2,6,23,0.45);transition:transform 220ms ease, box-shadow 220ms ease}
-    .project:hover{transform:translateY(-6px);box-shadow:0 22px 48px rgba(2,6,23,0.6)}
-    .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
-    .tag{font-size:12px;padding:6px 8px;border-radius:999px;background:rgba(255,255,255,0.03);color:var(--muted)}
-
-    /* Contact */
-    .contact-grid{display:grid;grid-template-columns:1fr 420px;gap:20px}
-    .contact-card{padding:20px;border-radius:12px;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent)}
-    form label{display:block;font-weight:700;margin-bottom:6px}
-    form input, form textarea{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:var(--text);resize:vertical}
-
-    footer{opacity:0.7;padding:28px 0;text-align:center;color:var(--muted)}
-
-    /* Responsive */
-    @media (max-width:880px){
-      .profile-grid{grid-template-columns:1fr}
-      .hero-inner{flex-direction:column}
-      .contact-grid{grid-template-columns:1fr}
-      header{top:8px}
-    }
-
-    /* Reduced motion */
-    @media (prefers-reduced-motion: reduce){
-      *{animation:none!important;transition:none!important}
-    }
-
-    /* Reveal helper */
-    .reveal{opacity:0;transform:translateY(14px);transition:opacity 700ms ease, transform 700ms ease}
-    .reveal.in{opacity:1;transform:none}
-  </style>
-</head>
-<body>
-  <header class="container">
-    <div class="nav" role="navigation" aria-label="Primary">
-      <div class="brand">
-        <div class="logo" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="3" width="18" height="18" rx="4" fill="white" fill-opacity="0.14"/><path d="M7 12h10M7 8h10M7 16h10" stroke="white" stroke-opacity="0.9" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
-        <div>
-          <h1 style="font-size:14px;margin:0">Your Name</h1>
-          <p style="font-size:12px;margin:0;color:var(--muted)">Frontend Developer • JBIT Dehradun</p>
-        </div>
-      </div>
-
-      <nav>
-        <ul>
-          <li><a href="#home" class="nav-link active">Home</a></li>
-          <li><a href="#about" class="nav-link">About</a></li>
-          <li><a href="#skills" class="nav-link">Skills</a></li>
-          <li><a href="#projects" class="nav-link">Projects</a></li>
-          <li><a href="#contact" class="nav-link">Contact</a></li>
-        </ul>
-      </nav>
-
-      <div class="controls">
-        <button class="btn" id="theme-toggle" aria-label="Toggle theme">🌙</button>
-      </div>
-    </div>
-  </header>
-
-  <main class="container">
-    <section id="home" class="hero">
-      <div class="hero-inner reveal in">
-        <div class="hero-card" style="flex:1">
-          <div class="float-shape float-a" aria-hidden="true"></div>
-          <div class="float-shape float-b" aria-hidden="true"></div>
-          <h2 class="headline">Hi, I'm <span id="name-animated">Your Name</span></h2>
-          <div class="role">I'm a <span id="role-typing" aria-live="polite">Frontend Developer</span></div>
-          <p class="bio">I build modern, responsive interfaces and delightful micro-interactions. Currently studying at JBIT Dehradun with a focus on frontend web development and UI design.</p>
-          <div class="cta">
-            <a class="btn" href="#contact">Contact Me</a>
-            <a class="btn" href="#projects">View Projects</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="about" class="reveal">
-      <h3 class="section-title">About & Education</h3>
-      <div class="profile-grid">
-        <div class="profile-card">
-          <div class="avatar">YP</div>
-          <div style="margin-top:12px">
-            <strong>Study</strong>
-            <div class="timeline" style="margin-top:10px">
-              <div style="font-weight:700">JBIT Dehradun</div>
-              <div style="color:var(--muted);font-size:13px">B.Tech in Computer Science — Pursuing (2022 - 2026)</div>
-            </div>
-          </div>
-          <div class="stats" style="margin-top:12px">
-            <div class="stat"><b>6</b><span style="color:var(--muted)">Projects</span></div>
-            <div class="stat"><b>3.5</b><span style="color:var(--muted)">Years Study</span></div>
-            <div class="stat"><b>12</b><span style="color:var(--muted)">Skills</span></div>
-          </div>
-        </div>
-
-        <div>
-          <p class="bio">Hello — I'm a student and frontend developer passionate about building accessible, animated user interfaces. I enjoy turning ideas into polished web experiences with delightful motion and crisp typography.</p>
-          <h4 style="margin-top:18px">Quick Facts</h4>
-          <ul style="color:var(--muted)">
-            <li>Location: Dehradun, India</li>
-            <li>Email: <a href="mailto:name@example.com" style="color:var(--primary)">name@example.com</a></li>
-            <li>Phone: +91 98765 43210</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section id="skills" class="reveal">
-      <h3 class="section-title">Skills & Strengths</h3>
-      <div class="skills-grid" id="skills-grid">
-        <!-- Skills rendered by JS -->
-      </div>
-    </section>
-
-    <section id="projects" class="reveal">
-      <h3 class="section-title">Projects</h3>
-      <div class="projects-grid" id="projects-grid">
-        <!-- Projects rendered by JS -->
-      </div>
-    </section>
-
-    <section id="contact" class="reveal">
-      <h3 class="section-title">Contact</h3>
-      <div class="contact-grid">
-        <div class="contact-card">
-          <h4>Get in touch</h4>
-          <p style="color:var(--muted)">I'm open to opportunities and collaborations — feel free to reach out by email or phone, or send a quick message below.</p>
-          <div style="margin-top:14px">
-            <p><strong>Email:</strong> <a href="mailto:name@example.com" style="color:var(--primary)">name@example.com</a></p>
-            <p><strong>Phone:</strong> <span style="color:var(--muted)">+91 98765 43210</span></p>
-            <p style="margin-top:8px"><strong>Social</strong></p>
-            <div style="display:flex;gap:10px">
-              <a href="#" style="color:var(--muted)">GitHub</a>
-              <a href="#" style="color:var(--muted)">LinkedIn</a>
-              <a href="#" style="color:var(--muted)">Twitter</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="contact-card">
-          <form id="contact-form">
-            <label for="name">Name</label>
-            <input id="name" name="name" required placeholder="Your name" />
-            <label for="email">Email</label>
-            <input id="email" name="email" type="email" required placeholder="you@example.com" />
-            <label for="message">Message</label>
-            <textarea id="message" name="message" rows="6" required placeholder="Say hi — or share a brief project idea"></textarea>
-            <div style="display:flex;gap:8px;margin-top:12px">
-              <button class="btn" type="submit">Send Message</button>
-              <button class="btn" type="button" id="mailto-btn">Open Email</button>
-            </div>
-            <div id="form-status" style="margin-top:12px;color:var(--muted)"></div>
-          </form>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    © <span id="year"></span> Your Name — Built with care • JBIT Dehradun
-  </footer>
-
-  <script>
-    // Mock API responses by intercepting fetch for /api/*
-    (function(){
-      const mock = {
-        '/api/profile': ()=>({ id:'p1', name:'Your Name', headline:'Frontend Developer and UI Enthusiast', bio:'Student at JBIT Dehradun focusing on frontend development', email:'name@example.com', phone:'+91 98765 43210', location:'Dehradun, India', createdAt:new Date().toISOString(), updatedAt:new Date().toISOString() }),
-        '/api/education': ()=>([ {id:'e1', profile_id:'p1', institution:'JBIT Dehradun', degree:'B.Tech in Computer Science', status:'Pursuing', start_year:2022, end_year:2026, description:'Core focus on web technologies', createdAt:new Date().toISOString(), updatedAt:new Date().toISOString()} ]),
-        '/api/skills': ()=>([
-          {id:'s1', profile_id:'p1', name:'HTML', level:92, category:'Frontend'},
-          {id:'s2', profile_id:'p1', name:'CSS', level:88, category:'Frontend'},
-          {id:'s3', profile_id:'p1', name:'JavaScript', level:86, category:'Frontend'},
-          {id:'s4', profile_id:'p1', name:'React', level:72, category:'Frontend'},
-          {id:'s5', profile_id:'p1', name:'Git', level:80, category:'Tools'},
-          {id:'s6', profile_id:'p1', name:'Figma', level:68, category:'Design'}
-        ]),
-        '/api/projects': ()=>([
-          {id:'pr1', profile_id:'p1', title:'Interactive Dashboard', description:'A responsive dashboard with charts and filters.', tech_stack:['HTML','CSS','JavaScript'], demo_url:'#', repo_url:'#', featured:true, createdAt:new Date().toISOString(), updatedAt:new Date().toISOString()},
-          {id:'pr2', profile_id:'p1', title:'Animated Portfolio', description:'Single-file portfolio with premium animations.', tech_stack:['HTML','CSS','Vanilla JS'], demo_url:'#', repo_url:'#', featured:true, createdAt:new Date().toISOString(), updatedAt:new Date().toISOString()},
-          {id:'pr3', profile_id:'p1', title:'Task Tracker', description:'A small PWA-style task manager.', tech_stack:['JS','IndexedDB'], demo_url:'#', repo_url:'#', featured:false, createdAt:new Date().toISOString(), updatedAt:new Date().toISOString()}
-        ]),
-        '/api/contact': (body)=>({status:'ok', received:body})
-      };
-
-      const originalFetch = window.fetch.bind(window);
-      window.fetch = function(input, init){
-        try{
-          const url = (typeof input === 'string')? input : input.url;
-          const path = new URL(url, location.origin).pathname;
-          if(path.startsWith('/api/')){
-            const fn = mock[path];
-            if(!fn) return Promise.resolve(new Response(JSON.stringify({error:'Not found'}), {status:404, headers:{'Content-Type':'application/json'}}));
-            if(init && init.method && init.method.toUpperCase()==='POST'){
-              const bodyText = init.body || '';
-              let data;
-              try{ data = JSON.parse(bodyText);}catch(e){data = bodyText}
-              return Promise.resolve(new Response(JSON.stringify(fn(data)), {status:200, headers:{'Content-Type':'application/json'}}));
-            }
-            return Promise.resolve(new Response(JSON.stringify(fn()), {status:200, headers:{'Content-Type':'application/json'}}));
-          }
-        }catch(e){/* fallthrough */}
-        return originalFetch(input, init);
-      };
-    })();
-
-    // Utilities
-    function el(id){return document.getElementById(id)}
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Theme toggle
-    const themeBtn = el('theme-toggle');
-    const stored = localStorage.getItem('theme');
-    function applyTheme(t){
-      document.documentElement.setAttribute('data-theme', t);
-      if(t==='dark'){
-        document.body.style.background = 'radial-gradient(1200px 600px at 10% 10%, rgba(167,139,250,0.06), transparent), linear-gradient(180deg,#0F172A, #071028 120%)';
-        themeBtn.textContent = '🌙';
-      } else {
-        document.body.style.background = 'linear-gradient(180deg,#F8FAFC,#E6EEF8)';
-        themeBtn.textContent = '☀️';
-      }
-    }
-    if(stored) applyTheme(stored); else applyTheme('dark');
-    themeBtn.addEventListener('click', ()=>{ const next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark'; localStorage.setItem('theme', next); applyTheme(next); });
-
-    // Typing animation
-    (function(){
-      const elRole = el('role-typing');
-      const roles = ['Frontend Developer','UI Enthusiast','Student at JBIT Dehradun'];
-      let idx=0, i=0, forward=true;
-      const speed = navigator.userAgent.indexOf('MSIE')===-1? 70:120;
-      function tick(){
-        if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) { elRole.textContent = roles[0]; return; }
-        const word = roles[idx];
-        if(forward){ i++; elRole.textContent = word.slice(0,i); if(i===word.length){ forward=false; setTimeout(tick,900); return; } }
-        else { i--; elRole.textContent = word.slice(0,i); if(i===0){ forward=true; idx=(idx+1)%roles.length; } }
-        setTimeout(tick, speed);
-      }
-      tick();
-    })();
-
-    // Render skills
-    (async function(){
-      const skills = await (await fetch('/api/skills')).json();
-      const container = el('skills-grid');
-      container.innerHTML = '';
-      skills.forEach(s=>{
-        const div=document.createElement('div');div.className='skill reveal';
-        div.innerHTML = `<div class="label">${s.name} <span style="float:right;color:var(--muted);font-weight:600">${s.level}%</span></div><div class="progress"><i data-level="${s.level}"></i></div>`;
-        container.appendChild(div);
-      });
-    })();
-
-    // Render projects
-    (async function(){
-      const projects = await (await fetch('/api/projects')).json();
-      const grid = el('projects-grid');
-      grid.innerHTML = '';
-      projects.forEach(p=>{
-        const d=document.createElement('article');d.className='project reveal';
-        d.innerHTML = `<h4 style="margin:0">${p.title}</h4><p style="color:var(--muted)">${p.description}</p><div class="tags">${p.tech_stack.map(t=>`<span class='tag'>${t}</span>`).join('')}</div><div style="margin-top:10px"><a href='${p.demo_url}' class='btn' style='padding:6px 10px'>Live</a> <a href='${p.repo_url}' class='btn' style='padding:6px 10px'>Repo</a></div>`;
-        grid.appendChild(d);
-      });
-    })();
-
-    // Contact form handling
-    document.getElementById('contact-form').addEventListener('submit', async function(e){
-      e.preventDefault(); const status = el('form-status'); status.textContent='Sending...';
-      const body = { name: el('name').value, email: el('email').value, message: el('message').value, sentAt:new Date().toISOString() };
-      try{
-        const res = await fetch('/api/contact', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(body) });
-        const json = await res.json(); status.textContent = 'Message sent — thank you!';
-        setTimeout(()=> status.textContent = '', 4000);
-        this.reset();
-      }catch(err){ status.textContent='Unable to send. Try email: name@example.com'; }
-    });
-    document.getElementById('mailto-btn').addEventListener('click', ()=>{
-      const to = 'name@example.com'; const subj='Hello from portfolio'; const body='Hi — I saw your portfolio.'; location.href = `mailto:${to}?subject=${encodeURIComponent(subj)}&body=${encodeURIComponent(body)}`;
-    });
-
-    // Scroll reveal & active nav
-    const io = new IntersectionObserver((entries)=>{
-      entries.forEach(entry=>{
-        if(entry.isIntersecting){ entry.target.classList.add('in'); const id = entry.target.id; if(id){ document.querySelectorAll('.nav-link').forEach(a=>a.classList.toggle('active', a.getAttribute('href')===('#'+id))); }
-        }
-      });
-    }, {threshold:0.12});
-    document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
-
-    // Progress animation for skills on reveal: observe progress bars
-    const skillObserver = new IntersectionObserver((entries)=>{ entries.forEach(en=>{ if(en.isIntersecting){ en.target.querySelectorAll('.progress > i').forEach(i=>{ i.style.width = i.dataset.level + '%'; }); } }); }, {threshold:0.2});
-    document.querySelectorAll('#skills-grid .skill').forEach(s=>skillObserver.observe(s));
-
-    // Active nav links click behaviour
-    document.querySelectorAll('.nav-link').forEach(a=>a.addEventListener('click', (e)=>{ document.querySelectorAll('.nav-link').forEach(n=>n.classList.remove('active')); e.currentTarget.classList.add('active'); }));
-
-    // Ensure sections are observed for nav activation
-    document.querySelectorAll('main > section').forEach(s=>{ s.id && io.observe(s); });
-
-    // Accessibility: focus outlines for keyboard users
-    (function(){
-      function handleFirstTab(e){ if(e.key==='Tab'){ document.body.classList.add('user-is-tabbing'); window.removeEventListener('keydown', handleFirstTab); }}
-      window.addEventListener('keydown', handleFirstTab);
-    })();
-
+    (function(){ function handleFirstTab(e){ if(e.key==='Tab'){ document.body.classList.add('user-is-tabbing'); window.removeEventListener('keydown', handleFirstTab); } } window.addEventListener('keydown', handleFirstTab); })();
   </script>
 </body>
 </html>
